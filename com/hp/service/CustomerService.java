@@ -38,16 +38,17 @@ public class CustomerService {
        }
 
     private void oneOption(String option) {
-        switch (option){
+        switch (option) {
             case "1":
                 System.out.println("余额查询");
-                // 查询余额外
+                // 查询余额
                 doSelectMoney();
-                // 当按下1 之后,  回退到  1及选项
+                // 返回到选择界面
                 goOneHome();
                 break;
             case "2":
                 System.out.println("取款");
+                doGetMoney();
                 goOneHome();
                 break;
             case "3":
@@ -55,6 +56,7 @@ public class CustomerService {
                 goOneHome();
                 break;
             case "4":
+                doSaveMoney();
                 System.out.println("存款");
                 goOneHome();
                 break;
@@ -62,12 +64,14 @@ public class CustomerService {
                 System.out.println("退卡");
                 goOneHome();
                 break;
+
             default:
                 System.out.println("你输入的数字有误");
                 goOneHome();
                 break;
         }
     }
+
 
     // 返回一级菜单
     private void goOneHome() {
